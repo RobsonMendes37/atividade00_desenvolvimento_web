@@ -11,7 +11,8 @@ const Criar = () => {
     const [nome, setNome] = useState("")
     const [curso, setCurso] = useState("")
     const [titulacao, setTitulacao] = useState("MESTRADO")
-    const [ai, setAi] = useState({es:false, lc:false, mc:false}) //ai = área de interesse
+    const [ira, setIra] = useState(0) // Novo campo
+    const [ai, setAi] = useState({es:false, lc:false, mc:false})
     const [universidade, setUniversidade] = useState({ufc:false,ifce:false})
 
     const firebase = useContext(FirebaseContext)
@@ -42,14 +43,18 @@ const Criar = () => {
         setCurso(event.target.value)
     }
 
+    const handleInputIra = (event) => {
+        setIra(event.target.value)
+    }
+
     const handleSelect = (event) => {
         setTitulacao(event.target.value)
     }
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        alert("Nome: " + nome + "\nCurso: " + curso + " \nTitulacao: " + titulacao)
-        const novoAluno = {nome,curso,titulacao,ai,universidade}
+        alert("Nome: " + nome + "\nCurso: " + curso + " \nTitulacao: " + titulacao + "\nIRA: " + ira)
+        const novoAluno = {nome,curso,titulacao,ira,ai,universidade}
         //postAlunoAxiosThenCatch(novoAluno)
         //postAlunoFetchThenCatch(novoAluno)
         /*AlunoService.postAlunoAxiosThenCatch(
@@ -90,6 +95,17 @@ const Criar = () => {
                         name="curso"
                         id="inputCurso"
                         onChange={handleInputCurso} 
+                    />
+                </div>
+
+                <div className="mb-3">
+                    <label className="form-label" htmlFor="inputIra">IRA</label>
+                    <input
+                        className="form-control"
+                        type="number"
+                        name="ira"
+                        id="inputIra"
+                        onChange={handleInputIra}
                     />
                 </div>
 
