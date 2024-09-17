@@ -10,6 +10,8 @@ import Firebase from "./utils/Firebase"
 import FirebaseContext from "./utils/FirebaseContext"
 import Home from "./components/Home";
 
+import AgruparPorCurso from "./components/aluno/AgruparPorCurso"; // Import the new component
+
 const router = createBrowserRouter(
     [
         {
@@ -31,6 +33,10 @@ const router = createBrowserRouter(
                 {
                     path:"aluno/editar/:id",
                     element:<Editar />
+                },
+                {
+                    path:"aluno/agrupar-por-curso", // New route
+                    element:<AgruparPorCurso /> // New component
                 }
             ]
         }

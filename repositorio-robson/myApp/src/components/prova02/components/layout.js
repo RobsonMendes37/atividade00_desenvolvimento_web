@@ -43,6 +43,11 @@ const Home = () => {
                         Criar Aluno
                     </Link>
                   </li>
+                  <li>
+                    <Link className="dropdown-item" to="aluno/agrupar-por-curso">
+                        Agrupar por Curso
+                    </Link>
+                  </li>
                 </ul>
               </li>
               {/*FIM DO MENU DROPDOWN*/}
