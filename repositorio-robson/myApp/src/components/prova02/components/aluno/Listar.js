@@ -49,6 +49,7 @@ const Listar = () => {
                     <td>{aluno.nome}</td>
                     <td>{aluno.curso}</td>
                     <td>{aluno.titulacao}</td>
+                    <td>{aluno.ira}</td> {/* Novo campo */}
                     <td>
                         <div className="button-content">
                             <Link 
@@ -84,6 +85,7 @@ const Listar = () => {
               <th scope="col">Nome</th>
               <th scope="col">Curso</th>
               <th scope="col">Titulação</th>
+              <th scope="col">IRA</th> {/* Novo campo */}
               <th scope="col"></th>
             </tr>
           </thead>
