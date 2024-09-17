@@ -4,17 +4,16 @@ class AlunoFirebaseService {
 
     static listar(db, callback) {
         const c = collection(db,"alunos")
-        //const q = query(c)
+        
         getDocs(c)
         .then(
             (querySnapshot) => {
 
                 const alunos = []
-                //laço
+                
                 querySnapshot.forEach(
                     ( aluno ) => {
-                        //console.log(aluno.id)
-                        //console.log(aluno.data())
+    
                         alunos.push(
                             {
                                 id:aluno.id,

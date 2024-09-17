@@ -140,14 +140,14 @@ const Editar = () => {
                         id="selectTitulacao"
                         onChange={handleSelect}
                     >
-                        <option value="GRADUACAO">GRADUAÇÃO</option>
-                        <option value="MESTRADO">MESTRADO</option>
-                        <option value="DOUTORADO">DOUTORADO</option>
+                        <option value="GRADUACAO">Graduação</option>
+                        <option value="MESTRADO">Mestrado</option>
+                        <option value="DOUTORADO">Doutorado</option>
                     </select>
                 </div>
 
                 <div>
-                <label className="form-label">Áreas de Interesse</label> 
+                <label className="form-label">Habilidades</label> 
                 <fieldset className="scheduler-border">
                     <div className="form-check">
                         <input 

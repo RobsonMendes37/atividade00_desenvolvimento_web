@@ -1,8 +1,7 @@
 import axios from "axios";
 
-//const url = "http://localhost:3001/alunos";
 const url = "http://localhost:3003/alunos/"
-//const url = "http://10.0.116.0:3003/alunos/"
+
 
 class AlunoService {
   //GET SERVICES

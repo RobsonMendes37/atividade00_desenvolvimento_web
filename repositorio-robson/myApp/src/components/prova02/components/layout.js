@@ -17,7 +17,7 @@ const Home = () => {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" href="http://www.bootstrap.com">
+                <a className="nav-link active" href="/">
                   Home
                 </a>
               </li>

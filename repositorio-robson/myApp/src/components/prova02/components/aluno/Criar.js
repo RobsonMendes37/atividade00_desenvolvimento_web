@@ -48,7 +48,7 @@ const Criar = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        //alert("Nome: " + nome + "\nCurso: " + curso + " \nTitulacao: " + titulacao)
+        alert("Nome: " + nome + "\nCurso: " + curso + " \nTitulacao: " + titulacao)
         const novoAluno = {nome,curso,titulacao,ai,universidade}
         //postAlunoAxiosThenCatch(novoAluno)
         //postAlunoFetchThenCatch(novoAluno)
