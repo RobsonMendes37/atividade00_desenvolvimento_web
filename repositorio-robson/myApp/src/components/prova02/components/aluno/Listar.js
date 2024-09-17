@@ -100,7 +100,16 @@ const Listar = () => {
           </tbody>
           <tfoot>
             <tr>
-              <th  scope="col" style={{ color: "Green" }}>Media :{media}</th>
+              <th 
+                scope="col" 
+                style={{ 
+                  color: "#FFD76B", 
+                  boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)", 
+                  background: "#26A69A" 
+                }}
+              >
+                Média: {media}
+              </th>
             </tr>
           </tfoot>
         </table>
