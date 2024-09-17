@@ -35,7 +35,7 @@ const router = createBrowserRouter(
                     element:<Editar />
                 },
                 {
-                    path:"aluno/agrupar-por-curso", // New route
+                    path:"aluno/agruparPorCurso", // New route
                     element:<AgruparPorCurso /> // New component
                 }
             ]

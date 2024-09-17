@@ -44,7 +44,7 @@ const Home = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item" to="aluno/agrupar-por-curso">
+                    <Link className="dropdown-item" to="aluno/agruparPorCurso">
                         Agrupar por Curso
                     </Link>
                   </li>

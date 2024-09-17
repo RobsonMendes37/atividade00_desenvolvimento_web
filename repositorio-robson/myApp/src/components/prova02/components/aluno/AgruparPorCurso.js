@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState, useContext } from 'react';
+import AlunoFirebaseService from '../../services/AlunoFirebaseService';
+import FirebaseContext from '../../utils/FirebaseContext';
+import '../../css/crud.css'; // Certifique-se de importar o CSS
 
 const AgruparPorCurso = () => {
-    const alunos = [
-        { nome: "Fulano de Tal", curso: "Sistemas de Informação", ira: 7.5 },
-        { nome: "Sicrano de Tal", curso: "Sistemas de Informação", ira: 6.3 },
-        { nome: "Beltrana de Tal", curso: "Engenharia de Software", ira: 9.4 }
-    ];
+    const [alunos, setAlunos] = useState([]);
+    const firebase = useContext(FirebaseContext);
+
+    useEffect(() => {
+        AlunoFirebaseService.listar(
+            firebase.getFirestoreDb(),
+            (alunos) => {
+                setAlunos(alunos);
+            }
+        );
+    }, [firebase]);
 
     const groupedAlunos = alunos.reduce((acc, aluno) => {
         if (!acc[aluno.curso]) {
@@ -16,17 +25,29 @@ const AgruparPorCurso = () => {
     }, {});
 
     return (
-        <div>
+        <div className="page-content">
+            <h1>Alunos Agrupados por Curso</h1>
             {Object.keys(groupedAlunos).map(curso => (
-                <div key={curso}>
+                <div key={curso} className="table-content">
                     <h2>{curso}</h2>
-                    <ul>
-                        {groupedAlunos[curso].map(aluno => (
-                            <li key={aluno.nome}>
-                                {aluno.nome} - IRA: {aluno.ira}
-                            </li>
-                        ))}
-                    </ul>
+                    <table className="table table-striped table-bordered">
+                        <thead className="table-dark">
+                            <tr>
+                                <th scope="col">Nome</th>
+                                <th scope="col">IRA</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {groupedAlunos[curso].map(aluno => (
+                                <tr key={aluno.id}>
+                                    <td>{aluno.nome}</td>
+                                    <td className={parseFloat(aluno.ira) >= 7 ? 'highlight-ira' : ''}>
+                                        {aluno.ira}
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
                 </div>
             ))}
         </div>
